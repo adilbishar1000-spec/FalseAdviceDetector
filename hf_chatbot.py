@@ -1,3 +1,8 @@
+import os
+# Fix for Vercel's read-only file system
+os.environ['HOME'] = '/tmp'
+os.environ['USERPROFILE'] = '/tmp'
+
 import g4f
 from g4f.client import Client
 
