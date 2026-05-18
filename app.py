@@ -15,8 +15,9 @@ app = Flask(__name__)
 # ===============================
 # Load ML Model
 # ===============================
-model = pickle.load(open("model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = pickle.load(open(os.path.join(BASE_DIR, "model.pkl"), "rb"))
+vectorizer = pickle.load(open(os.path.join(BASE_DIR, "vectorizer.pkl"), "rb"))
 
 # ===============================
 # Prediction Function

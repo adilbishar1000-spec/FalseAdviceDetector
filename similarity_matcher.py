@@ -2,9 +2,12 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+import os
 
 # ✅ Load dataset (500 myths)
-dataset = pd.read_csv("health_myth_dataset_500.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "health_myth_dataset_500.csv")
+dataset = pd.read_csv(csv_path)
 
 # Vectorizer for similarity search
 sim_vectorizer = TfidfVectorizer()
